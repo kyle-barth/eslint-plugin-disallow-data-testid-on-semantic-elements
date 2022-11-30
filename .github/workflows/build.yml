@@ -12,15 +12,19 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
+            - uses: pnpm/action-setup@v2
+              with:
+                version: 7
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v3
               with:
-                  node-version: ${{ matrix.node-version }}
+                node-version: ${{ matrix.node-version }}
+                cache: 'pnpm'
             - name: Install dependencies
-              run: yarn --frozen-lockfile
+              run: pnpm install
             - name: Format check
-              run: yarn format:check
+              run: pnpm format:check
             - name: Unit Testing
-              run: yarn test
+              run: pnpm test
               env:
                   CI: true

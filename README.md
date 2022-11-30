@@ -8,3 +8,7 @@ Enforces best practices with `data-testid` by disallowing it on elements with se
 - If an ARIA generic element has a role or any ARIA attribute, disallow use of `data-testid`
 - should provide descriptive error messages for correct `data-testid` usage on semantic and generic elements.
 - Same rules for `data-test-id` to account for typos!
+
+## References
+
+General project structure / best practices taken from [eslint-plugin-tutorial](https://github.com/Quramy/eslint-plugin-tutorial)
