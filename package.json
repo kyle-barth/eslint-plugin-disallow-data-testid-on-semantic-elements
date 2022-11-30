@@ -1,7 +1,7 @@
 {
-    "name": "@eslint-plugin/disallow-data-testid-on-semantic-elements",
+    "name": "eslint-plugin-disallow-data-testid-on-semantic-elements",
     "version": "0.0.0",
-    "description": "Enforces best practices with data-testid by disallowing it on elements with semantic meaning or ARIA generic elements with ARIA attributes",
+    "description": "Enforces best practices with data-testid by disallowing it on semantic elements, or ARIA generic elements with ARIA attributes",
     "main": "lib/index.js",
     "scripts": {
         "clean": "rimraf lib",
