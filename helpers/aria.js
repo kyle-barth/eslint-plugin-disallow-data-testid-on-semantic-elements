@@ -1,12 +1,7 @@
-const aria = require("aria-query");
-const _ = require("lodash");
+import * as aria from "aria-query";
+import _ from "lodash";
 
-const elementRoles = aria.elementRoles.entries();
-const ariaGenericElements = elementRoles
+export const elementRoles = aria.elementRoles.entries();
+export const ariaGenericElements = elementRoles
   .filter((elementRole) => _.flatten(elementRole).includes("generic"))
   .map((elementRole) => elementRole[0].name);
-
-module.exports = {
-  ariaGenericElements,
-  elementRoles,
-};
