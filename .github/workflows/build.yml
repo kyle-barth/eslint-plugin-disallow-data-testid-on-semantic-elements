@@ -3,28 +3,28 @@ name: build
 on: [pull_request, push]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [18.x]
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-        steps:
-            - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
-              with:
-                version: 7
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                node-version: ${{ matrix.node-version }}
-                cache: 'pnpm'
-            - name: Install dependencies
-              run: pnpm install
-            - name: Format check
-              run: pnpm format:check
-            - name: Unit Testing
-              run: pnpm test
-              env:
-                  CI: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Format check
+        run: pnpm format:check
+      - name: Unit Testing
+        run: pnpm test
+        env:
+          CI: true

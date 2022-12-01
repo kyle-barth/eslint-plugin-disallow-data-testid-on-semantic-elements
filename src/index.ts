@@ -1,7 +1,7 @@
-import dataTestId from './rules/data-testid'
+import dataTestId from './rules/data-testid';
 
 export = {
-    rules: {
-        'data-testid': dataTestId,
-    },
-}
+  rules: {
+    'data-testid': dataTestId,
+  },
+};
